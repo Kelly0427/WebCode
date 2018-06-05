@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>模板1</title>
+	<link rel="stylesheet" type="text/css" href="../css/cntl.css">
+</head>
+<body>
+	<div class="jq22-container">
+
+		<div class="cntl">
+			<span class="cntl-bar cntl-center">
+				<span class="cntl-bar-fill"></span>
+			</span>
+
+			<div class="cntl-states">
+				<div class="cntl-state">
+					<div class="cntl-content">
+						<h3>第一次在电影院楼下看见你就，为你心动</h3>
+						<h3>为你心动</h3>
+						<p></p>
+					</div>
+					<div class="cntl-image"><img src="../images/1.jpg"></div>
+					<div class="cntl-icon cntl-center">1</div>
+				</div>
+
+				<div class="cntl-state">
+					<div class="cntl-content">
+						<h3>不知道什么时候起</h3>
+						<h3>看见你就很开心，</h3>
+						<h3>看见你的笑容就更开心，</h3>
+					</div>
+                    <div class="cntl-image"><img src="../images/2.jpg"></div>
+					<div class="cntl-icon cntl-center">2</div>
+				</div>
+
+				<div class="cntl-state">
+					<div class="cntl-content">
+						<h3>如果明天将是世界末日，</h3>
+						<h3>那么今天我要让幸福开始</h3>
+					</div>
+					<div class="cntl-image"><img src="../images/3.jpg"></div>
+					<div class="cntl-icon cntl-center">3</div>
+				</div>
+
+				<div class="cntl-state">
+					<div class="cntl-content">
+						<h3>如果明天一切都将消逝，</h3>
+						<h3>那么今天我要让缘分相遇</h3>
+					</div>
+					<div class="cntl-image"><img src="../images/4.jpg"></div>
+					<div class="cntl-icon cntl-center">4</div>
+				</div>
+
+				<div class="cntl-state">
+					<div class="cntl-content">
+						<h3>让我轻轻告诉你，</h3>
+						<h3>早在第一眼就喜欢上了你！</h3>
+					</div>
+					<div class="cntl-image"><img src="../images/5.jpg"></div>
+					<div class="cntl-icon cntl-center">5</div>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.cntl.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(e){
+			$('.cntl').cntl({
+				revealbefore: 300,
+				anim_class: 'cntl-animate',
+				onreveal: function(e){
+					console.log(e);
+				}
+			});
+		});
+	</script>
+</body>
+</html>
