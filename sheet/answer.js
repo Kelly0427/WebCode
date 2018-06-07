@@ -26,7 +26,11 @@ $.fn.Sheet = function (options) {
                             _cardcont.removeClass('card1');
                         }, 200);
                     }, 100);
-
+                     console.log($(this).text());
+                     console.log($('ul li:first label').text())
+                    if($(this).text()==$('ul li:first label').text()){
+                        console.log("success");
+                    }
                     /*if($(this).text()=="除存款、国债外,我几乎不投资其他金融产品" || $(this).text()=="大部分投资于外汇、国债等，较少投资于股票、基金等风险产品"){
                         console.log("success");
                     }*/
