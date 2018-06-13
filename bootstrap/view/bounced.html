@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹框</title>
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <script type="text/javascript" src="../javascript/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../javascript/bootstrap.js"></script>
+</head>
+<body>
+    <div >
+        <button id="myPopover" type="button" class="btn btn-default" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." data-container="body" data-toggle="popover" data-placement="bottom">
+            Popover on 底部
+        </button>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('[data-toggle="popover"]').popover();
+        })
+    </script>
+</body>
+</html>

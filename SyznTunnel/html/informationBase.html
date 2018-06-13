@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <title>情报板信息库</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="../favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" th:href="@{/css/informationBoard/informationBase.css}"/>
+        <link rel="stylesheet" type="text/css" id="theme" th:href="@{/css/theme-default.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/paging/paging.css}"/> 
+        <link rel="stylesheet" type="text/css" th:href="@{/css/loading/loading.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/electromechanical/table.css}"/>  
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="page-content ml">
+                <ul class="breadcrumb">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">信息发布</a></li>
+                    <li class="active">信息库</li>
+                </ul>
+                <div class="page-title">                    
+                    <a href="javascript:history.go(-1)"><h2><span class="fa fa-arrow-circle-o-left"></span>信息库</h2></a>
+                </div>
+                <div class="page-title ">                    
+                    <div class="row ">
+                    	<div class="form-group">
+	                    	<div class="col-md-3">
+	                            <label class="pull-left control-label taright">命令类型：</label>
+	                            <div class="col-md-7">
+	                                <select class="selectpicker form-control select fff commandType" id="commandType">
+	                                
+							        </select>
+	                            </div>
+                            </div>
+                        </div>
+                    	<div class="form-group">
+	                    	<div class="col-md-3 mt18">
+	                            <label class="pull-left control-label taright">内容：</label>
+	                            <div class="col-md-7">
+	                               <input name="" type="text" class="modal-input contentSearch fff" value=""/>
+	                            </div>
+                            </div>
+                        </div>
+                    	<div class="form-group">
+	                    	<div class="col-md-3 mt18">
+	                            <label class="pull-left control-label taright">尺寸：</label>
+	                            <div class="col-md-7">
+	                                <select class="selectpicker form-control select fff boardSizeSearch" id="boardSizeSearch">
+							        </select>
+	                            </div>
+                            </div>
+                        </div>
+	                     <button class="btn btn-primary search" style="margin-top:-22px;">搜索</button>  
+                    </div>
+                </div>
+                <div class="page-content-wrap">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default bodyInfos">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">查询结果</h3>       
+                                </div>
+                                <div class="panel-body">
+                                    <div class="btnGroup">
+                                        <button class="btn btn-danger btn-rounded btn-sm deleteBtn"><span class="fa fa-times"></span>删除</button>
+                                    	<!--<a class="btn btn-default btn-rounded btn-sm addBtn"><span class="fa fa-plus"></span>添加</a>-->
+                                    </div>
+                                   <input type="hidden" value="" class="removeId"/>
+                                    <table id="customers2" class="table datatable_simple tableStyle">
+                                        <thead>
+                                            <tr>
+                                                <th class="width60"><input type="checkbox" name="id1[]" value="" id="checkAll" class="self-input"/><span class="self-id">序号</span></th>
+                                                <th>信息</th>
+                                                <th>字体</th>
+                                                <th>字体大小</th>
+                                                <th>字体颜色</th>
+                                                <th>停留时间</th>
+                                                <!--<th>特效</th>-->
+                                                <!--<th>对齐方式</th>-->
+                                                <th>基本预览</th> 
+                                                <th>最近更新用户</th>
+                                                <th>更新时间</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="selfTbody">
+                                           
+                                        </tbody>
+                                       
+                                    </table>                                    
+                                    <div id="page" class="page_div pull-right"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>         
+            </div>            
+        </div>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document" style="width:780px;position:relative;top:-100px;">
+		    <div class="modal-content">
+		       <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">编辑内容</h4>
+		      </div>
+		      <div class="modal-body">
+		         <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-horizontal">
+                            <div class="panel panel-default">
+                                <div class="panel-body form-group-separated">    
+                                	<input type="hidden" class="rowId" >                                 
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label">命令类型：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select class="selectpicker form-control select fff commandType1" id="commandType1">
+							        		</select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label">情报板类型：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="boardSize1" class="selectpicker form-control boardSize1" id="boardSize1">
+                                                <option value="">请选择</option>
+                                                <option value="0">128*64</option>
+                                                <option value="1">320*20</option>
+                                                <option value="2">160*80</option>
+                                                <option value="3">400*40</option> 
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label">字体：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="font1" class="selectpicker form-control font1" id="font1">
+                                               <option value="">请选择</option>
+                                               <option value="1">宋体</option>
+                                               <option value="2">仿宋体</option>
+                                               <option value="3">黑体</option>
+                                               <option value="4">隶书</option>
+                                               <option value="5">楷体</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label">字体大小：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="fontSize1" class="selectpicker form-control fontSize1" id="fontSize1">
+                                               <option value="">请选择</option>
+                                               <option value="1">16</option>
+                                               <option value="2">24</option>
+                                               <option value="3">32</option>
+                                               <option value="4">48</option>
+                                               <option value="5">64</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label">字体颜色：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="fontColor1" class="selectpicker form-control fontColor1" id="fontColor1">
+                                               <option value="">请选择</option>
+                                               <option value="1">红色</option>
+                                               <option value="2">绿色</option>
+                                               <option value="3">蓝色</option>
+                                               <option value="4">黄色</option>
+                                               <option value="5">紫色</option>
+                                               <option value="6">青色</option>
+                                               <option value="7">白色</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                      
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label">对齐方式：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="align1" class="selectpicker form-control align1" id="align1">
+                                               <option value="">请选择</option>
+                                               <option value="0">居中</option>
+                                               <option value="1">居左</option>
+                                               <option value="2">居右</option>
+                                            </select>
+                                        </div>
+                                    </div>          
+                                   
+                                </div>
+                                </div>
+                                                           
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-horizontal">
+                            <div class="panel panel-default" style="margin-left:-20px;">
+                                <div class="panel-body form-group-separated">                                    
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label col-md-pull-2">特效：</label>
+                                        <div class="col-md-6 col-xs-12 col-md-pull-2">                                                                                            
+                                            <select name="inEffect1" class="selectpicker form-control enter1" id="enter1">
+                                                <option value="">请选择</option>
+                                                <option value="1">立即</option>
+                                                <option value="2">闪烁</option>
+                                                <option value="3">左移</option>
+                                                <option value="4">上移</option>
+                                                <option value="5">右移</option>
+                                                <option value="6">下移</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group height46">
+                                        <label class="col-md-5 col-xs-12 control-label col-md-pull-2">停留时间：</label>
+                                        <div class="col-md-6 col-xs-12 col-md-pull-2">                                                                                            
+                                            <input name="stay1" type="text" class="time1 fff" id="time1" value=" " />
+                                        </div>
+                                    </div> 
+                                    <div class="form-group height150 conGroup">
+                                        <label class="col-md-5 col-xs-12 control-label col-md-pull-2">内容：</label>
+                                        <div class="col-md-6 col-xs-12 field col-md-pull-2">                                            
+                                            <textarea name="content1" class="form-control content1 fff" rows="5"></textarea>
+                                        </div>
+                                    </div>   
+                                </div>
+                                <button type="button" class="btn btn-primary showPreview pull-right">显示预览</button>	
+                                </div>
+                            </div>
+                        </div>
+                    </div>  
+                    <div class="row">
+                    	<div class="col-md-12">
+                        	<div class="form-group">
+                                 <label class="col-md-2 col-xs-12 control-label nowPreview" >当前显示预览：</label>
+                                 <div class="col-md-8 col-xs-12 nowPreviewCss">   
+                                  <div id="previewBarPer">                                      
+                                 	<div id="previewBar1">                                         
+                                     	<div class="preview1" id="preview1">
+                                     	
+                                     	</div>
+                                     </div>
+                                 	</div>
+                                 </div>
+                             </div>
+                        </div>
+                    </div>      
+		      </div>
+		      <div class="modal-footer addFooter">
+		        <button type="button" class="btn btn-primary saveBtn" data-dismiss="modal">保存</button>	  
+		        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>	      
+		      </div> 
+		      
+		    </div>
+		  </div>
+		</div>
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
+			<div class="mb-container">
+				<div class="mb-middle">
+					<div class="mb-title">
+						<span class="fa fa-times"></span> 确定删除数据 ?
+					</div>
+					<div class="mb-content">
+						<p>您确定删除此信息吗?</p>
+					</div>
+					<div class="mb-footer">
+						<div class="pull-right">
+							<button class="btn btn-success btn-lg mb-control-yes">是</button>
+							<button class="btn btn-default btn-lg mb-control-close">否</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row1">
+		<div class="mb-container">
+			<div class="mb-middle">
+				<div class="mb-title">
+					<span class="fa fa-check"></span> 删除 <strong>成功！</strong>
+				</div>
+				<div class="mb-content"></div>
+				<div class="mb-footer">
+					<div class="pull-right">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row2">
+		<div class="mb-container">
+			<div class="mb-middle">
+				<div class="mb-title">
+					<span class="fa fa-check"></span> 保存 <strong>成功！</strong>
+				</div>
+				<div class="mb-content"></div>
+				<div class="mb-footer">
+					<div class="pull-right">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-error">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times"></span>操作失败！</div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-lg mb-control-yes">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-rowDefeated">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times tipFont"></span></div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-lg mb-control-yes">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-none">
+		    <div class="mb-container">
+		        <div class="mb-middle">
+		            <div class="mb-title"><span class="fa fa-times"></span><span class="noneCon"></span></div>
+		            <div class="mb-footer">
+		                <div class="pull-right">
+		                    <button class="btn btn-success btn-lg mb-control-yes">返回</button>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<div class="message-box animated fadeIn" data-sound="alert" id="error">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times"></span><span class="tip"></span></div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-lg mb-control-yes">是</button>
+                            <button class="btn btn-default btn-lg mb-control-close">否</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="overlay lovelayNone"></div>
+		<div id="AjaxLoading" class="showbox imgNone">
+		  <div class="loadingWord"><img src="/css/img/loading.gif"></div>
+		  <div>努力加载中，请稍候...</div>
+		</div>
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery-ui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap.min.js}"></script> 
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-select.js}"></script> 
+        <script type="text/javascript" th:src="@{/js/paging/paging.js}"></script>
+        <script type="text/javascript" th:src="@{/js/loading/loading.js}"></script>    
+        <script type="text/javascript" th:src="@{/js/informationBoard/select.js}"></script>  
+        <script type="text/javascript" th:src="@{/js/informationBoard/switch.js}"></script>  
+        <script type="text/javascript" th:src="@{/js/common.js}"></script>  
+        <script type="text/javascript" th:src="@{/js/device/cmsSetting.js}"></script>
+        <script type="text/javascript" th:src="@{/js/informationBoard/preview.js}"></script>
+        <script type="text/javascript" th:src="@{/js/informationBoard/informationBaseCommon.js}"></script>  
+        <script type="text/javascript" th:src="@{/js/informationBoard/informationBase.js}"></script>  
+        <script type="text/javascript" th:src="@{/js/plugins.js}"></script>
+        <script type="text/javascript" th:src="@{/js/actions.js}"></script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+

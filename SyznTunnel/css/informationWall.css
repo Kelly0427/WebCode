@@ -1,0 +1,49 @@
+
+ul{
+	padding:0px;
+}
+li{
+    list-style: none;
+  }          
+.wall-li{
+    float: left;
+    margin-left:8px;
+    margin-top:8px;
+    background:#F5F5F5;
+}
+.wall-jiankongBar{
+	padding:10px;
+}
+p{
+	margin-bottom: 0!important;
+}
+.wall-name{
+    height:25px;
+   /* background:#1C2B36;*/
+   background:#ddd;
+    line-height: 25px;
+    text-align: center;
+    color:#000;
+}
+.borderBlack{
+	border:2px solid #F1F1F1;
+}
+.checked{
+	border:2px solid #0F94F1!important;
+}
+.mt20{
+	margin-top:-20px;
+}
+.mt0{
+	margin-top:20px;
+}
+.btnGroups{
+	margin-top:8px;
+	margin-right:10px;
+}
+.panel .panel-body{
+	padding:0px;
+}
+.cmsWall{
+	display:inline-block;
+}

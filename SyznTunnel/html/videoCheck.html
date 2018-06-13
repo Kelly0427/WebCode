@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>高速综合管理平台</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" id="theme" th:href="@{/css/theme-default.css}" />
+	<link rel="stylesheet" type="text/css" id="theme" th:href="@{/css/videoMonitor/videoStyle.css}" />
+	<style>
+		 body{background:none;}
+		.page-title{background:#3C3F41;}
+		.backBtn{color:#ddd!important;}
+	</style>
+</head>
+<body>
+	 <div class="page-title">   
+	    <div class="row">
+	   		<a href="javascript:window.history.back()" class="btn btn-default btn-rounded btn-sm backBtn pull-right" style="margin-right:20px;"><span class="fa fa-mail-reply"></span>返回</a>
+		</div>
+	</div>
+	<div class="page-content ml">
+		<div class="vRealtime">	
+			<div class="videoRightModule col-md-12 clearCol">
+				<div id="ActiveX" class="ActiveX">
+					<div id="tipdiv" style="display:none;">
+						<a href="">当前无法播放视频，请点击点击此处下载安装控件</a>
+					</div>
+					<div id="playdiv">
+						<object classid="clsid:067A4418-EBAC-4394-BFBE-8C533BA6503A" id="h3c_IMOS_ActiveX" style="border:0px;width:100%;height:100%;" events="True"> </object>
+						<!--<object classid="clsid:B1A739F2-A8CA-4214-AC65-73E4C9569ACD" id="videoobj" events="True" style="border:0px;width:100%;height:100%;"> </object>-->
+					</div>		
+				</div>									                            
+            </div>
+        </div>	
+	</div>
+	<script type="text/javascript" th:src="@{/js/plugins/jquery/jquery.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/plugins/jquery/jquery-ui.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap.min.js}"></script>
+	<script type="text/javascript" th:src="@{/js/informationBoard/xinxiqiang.js}"></script>
+	<!--<script type="text/javascript" for= "h3c_IMOS_ActiveX" event="eventVehicleInfo(strParams)"></script>
+	<script type="text/javascript" for= "h3c_IMOS_ActiveX" event="eventClickFrame(ulFrameNum,  pcFrameInfo)">
+	    if(typeof dealEventClickFrame == "function"){
+	        dealEventClickFrame(ulFrameNum,pcFrameInfo);
+	        videoSourceSelected(ulFrameNum,'');
+	    }
+	</script>-->
+</body>
+</html>

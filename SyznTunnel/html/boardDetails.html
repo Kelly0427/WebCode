@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <title>情报板详情</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" id="theme" th:href="@{/css/theme-default.css}"/>
+         <style type="text/css">
+         	input{height:30px;border-radius:5px;background:#F9F9F9;border:1px solid #D5D5D5;padding-left:15px;}
+         	.backBtn{
+         		position:absolute;
+         		top:435px;
+         		right:563px;
+         	}
+         	.form-group{
+         		margin-left:0px!important;
+         		margin-right:0px!important;
+         	}
+         	.form-group label{
+         		margin-top:8px;
+         	}
+         	.panel{
+         		-moz-box-shadow:none;
+         		-webkit-box-shadow:none;
+         		box-shadow:none;
+         	}
+         	.form-group-separated .form-group [class^="col-md-"]{
+         		 border:none!important; 
+         	}
+         </style>
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="page-content ml">
+                <ul class="breadcrumb">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">信息发布</a></li>
+                    <li><a href="/informationBoard/informationPublish">情报板发布</a></li>
+                    <li class="active">情报板基本信息</li>
+                </ul>
+                <div class="page-content-wrap">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-horizontal">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>情报板基本信息</strong></h3>
+                                </div>
+                                <div class="panel-body form-group-separated">                                    
+                                     <div class="form-group">
+                                        <label class="col-md-8 col-xs-12 control-label">设备编码：</label>
+                                        <div class="col-md-4 col-xs-12">                                                                                                                                       
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                          
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-8 col-xs-12 control-label">管理机构：</label>
+                                        <div class="col-md-4 col-xs-12">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-8 col-xs-12 control-label">方向：</label>
+                                        <div class="col-md-4 col-xs-12">                                                                                            
+                                            
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>
+                                            
+                                        </div>
+                                    </div> 
+                                     <div class="form-group">
+                                        <label class="col-md-8 col-xs-12 control-label">设备类型：</label>
+                                        <div class="col-md-4 col-xs-12">                                                                                                                                       
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                          
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-8 col-xs-12 control-label">屏宽：</label>
+                                        <div class="col-md-4 col-xs-12">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                   <div class="form-group">
+                                        <label class="col-md-8 col-xs-12 control-label">最近修改时间：</label>
+                                        <div class="col-md-4 col-xs-12">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                    
+                                     <div class="form-group">
+                                        <label class="col-md-8 col-xs-12 control-label" style="visibility:hidden">最近修改时间：</label>
+                                        <div class="col-md-4 col-xs-12" style="visibility:hidden">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            
+                            <div class="form-horizontal">
+                            <div class="panel panel-default" style="margin-left:-50px;">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" style="visibility:hidden"><strong>添加内容</strong></h3>
+                                </div>
+                                <div class="panel-body form-group-separated">                                    
+                                   <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">设备名称：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                       
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                          
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">所属路段：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">桩号：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>
+                                        </div>
+                                    </div> 
+                                     <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">情报板类型：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                       
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                          
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">屏高：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                   <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">最近修改人：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label" style="visibility:hidden">最近修改人：</label>
+                                        <div class="col-md-6 col-xs-12" style="visibility:hidden">                                                                                                                                      
+                                            <input name="stay" type="text" class="time" value="" data-default=""/>                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="background:#fff;">
+                        	<div class="form-group" style="height:234px">
+                                <label class="col-md-4 col-xs-12 control-label" style="text-align:right;margin-top:20px">当前显示预览：</label>
+                                <div class="col-md-4 col-xs-12" style="height:198px;border:1px solid #ccc;border-radius:5px;margin-top:15px">   
+                                	<div id="previewBar">                                         
+                                    	<div class="preview" id="preview">
+                                    	
+                                    	</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                         <div class="panel-footer" style="background-color:#F2F2F1">
+                                                                       
+                             <button class="btn btn-primary pull-right backBtn" onclick="javascript:history.back(-1)">返回</button>
+                         </div>
+                    </div>                    
+                </div>
+            </div>            
+        </div>
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery-ui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap.min.js}"></script>                
+        <script type='text/javascript' th:src='@{/js/plugins/icheck/icheck.min.js}'></script>
+        <script type="text/javascript" th:src="@{/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-datepicker.js}"></script>                
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-file-input.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-select.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/tagsinput/jquery.tagsinput.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/informationBoard/add.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins.js}"></script>        
+        <script type="text/javascript" th:src="@{/js/actions.js}"></script>        
+    	<script type="text/javascript">
+		    /* var textAlign = {1: "center", 2: "left", 3: "right"}
+		
+		    var preview = function () {
+		        // 获取内容
+		        var text = $("textarea[name=content]").val();
+		
+		        // 将内容添加到预览框
+		        $("#preview").html(text);
+		
+		        // 获取情报板尺寸
+		        var boardSize = $("select[name=boardSize] option:selected").val().split('*');
+		
+		        // 获取字体
+		        var fontFamily = $("select[name=font] option:selected").html();
+		
+		        // 获取字体大小
+		        var fontSize = $("select[name=fontSize] option:selected").html();
+		
+		        // 获取字体颜色
+		        var fontColor = $("select[name=fontColor] option:selected").html();
+		        var color = "";
+		        switch (fontColor) {
+		            case "黄色":
+		                color = "yellow";
+		                break;
+		            case "绿色":
+		                color = "green";
+		                break;
+		            case "红色":
+		                color = "red";
+		                break;
+		            default:
+		                color = "#363636"
+		        }
+		
+		        // 对其方式
+		        var align = $("select[name=align] option:selected").val();
+		        // 预览框写入css
+		        // $("#preview").css({"color":color,"textAlign":textAlign[align], "fontFamily": fontFamily, "fontSize":fontSize, "color": fontColor,"width":boardSize[0],"height":boardSize[1],"background",'#000'})
+		        $("#preview").css("color", color);
+		        $("#preview").css("fontFamily", fontFamily);
+		        $("#preview").css("font-size", fontSize + "px");
+		        $("#preview").css("textAlign", textAlign[align]);
+		        $("#previewBar").css("width",boardSize[0]);
+		        $("#previewBar").css("height",boardSize[1]);
+		        $("#previewBar").css("background",'#000'); 
+		      
+		        /* <![CDATA[ */
+		        	if(boardSize[1]<$("#preview").height()){
+		        		 var box = $("#mb-remove-row");
+		 			    box.addClass("open");
+		 			    box.find(".mb-control-yes").on("click",function(){
+		 			    	box.removeClass("open");	
+		 			    })
+		        	}
+		       /*  ]]> */
+		        
+		    }
+		    $('.self-submit').click(function(){
+    		    var box = $("#mb-remove-row1");
+			    box.addClass("open");
+			    box.find("#mb-remove-row .mb-control-yes").on("click",function(){
+			    	box.removeClass("open");	
+			    })
+    	  }) */
+		
+	</script>               
+    </body>
+</html>
+
+
+
+
+
+

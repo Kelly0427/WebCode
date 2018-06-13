@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>        
+        <!-- META SECTION -->
+        <title>修改内容</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <!-- END META SECTION -->
+                        
+        <!-- CSS INCLUDE -->        
+        <link rel="stylesheet" type="text/css" id="theme" th:href="@{/css/theme-default.css}"/>
+        <!-- EOF CSS INCLUDE --> 
+         <style type="text/css">
+         
+         .form-group{
+        		/* border:none!important; */
+        		margin-left:0px!important;
+        		margin-right:0px!important;
+        	}
+         </style>             
+    </head>
+    <body>
+        <!-- START PAGE CONTAINER -->
+        <div class="page-container">
+            
+           
+            
+            <!-- PAGE CONTENT -->
+            <div class="page-content ml">
+                
+                             
+                
+                <!-- START BREADCRUMB -->
+                <ul class="breadcrumb">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">信息发布</a></li>
+                    <li><a href="/informationBoard/informationBase">信息库</a></li>
+                    <li class="active">修改内容</li>
+                </ul>
+                <!-- END BREADCRUMB -->
+                
+                <!-- PAGE CONTENT WRAPPER -->
+                <div class="page-content-wrap">
+                
+                    <div class="row">
+                        <div class="col-md-6">
+                            
+                            <div class="form-horizontal">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><strong>修改内容</strong></h3>
+                                  <!--   <ul class="panel-controls">
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul> -->
+                                </div>
+                              
+                                <div class="panel-body form-group-separated">                                    
+                                                                      
+                                    <div class="form-group">
+                                        <label class="col-md-5 col-xs-12 control-label">节目类型：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select class="form-control program" onchange="preview()">
+                                               
+                                            </select>
+                                            <span class="help-block">请选择节目类型</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-5 col-xs-12 control-label">情报板类型：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="boardSize" class="form-control boardSize" onchange="preview()">
+                                                
+                                            </select>
+                                            <span class="help-block">请输入情报板类型</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-5 col-xs-12 control-label">字体：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="font" class="form-control font" onchange="preview()">
+                                               
+                                            </select>
+                                            <span class="help-block">请选择字体</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-5 col-xs-12 control-label">字体大小：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="fontSize" class="form-control fontSize" onchange="preview()">
+                                                
+                                            </select>
+                                            <span class="help-block">请选择字体大小</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-5 col-xs-12 control-label">字体颜色：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="fontColor" class="form-control fontColor" onchange="preview()">
+                                                
+                                            </select>
+                                            <span class="help-block">请选择字体颜色</span>
+                                        </div>
+                                    </div>
+                                     <div class="form-group">
+                                        <label class="col-md-5 col-xs-12 control-label">内容：</label>
+                                        <div class="col-md-6 col-xs-12 field">                                            
+                                            <textarea name="content" onkeyup="preview()" class="form-control con" rows="5"></textarea>
+                                            <span class="help-block">请输入节目内容</span>
+                                        </div>
+                                    </div>             
+                                   
+                                </div>
+                                </div>
+                               
+                            
+                            </div>
+                            
+                        </div>
+                        <div class="col-md-6">
+                            
+                            <div class="form-horizontal">
+                            <div class="panel panel-default" style="margin-left:-20px;">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" style="visibility:hidden"><strong>修改内容</strong></h3>
+                                  <!--   <ul class="panel-controls">
+                                        <li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+                                    </ul> -->
+                                </div>
+                              
+                                <div class="panel-body form-group-separated">                                    
+                                                                      
+                                   
+                                   
+                                  
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">对齐方式：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="align" class="form-control align" onchange="preview()">
+                                                
+                                            </select>
+                                            <span class="help-block">请选择对齐方式</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">入屏特效：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="inEffect" class="form-control enter" onchange="preview()">
+                                                
+                                            </select>
+                                            <span class="help-block">请选择入屏特效</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">出屏特效：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <select name="outEffect" class="form-control out" onchange="preview()">
+                                                
+                                            </select>
+                                            <span class="help-block">请选择出屏特效</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 col-xs-12 control-label">停留时间：</label>
+                                        <div class="col-md-6 col-xs-12">                                                                                            
+                                            <!-- <input name="stay" type="text" class="tagsinput time" value=" " style="height:30px"/> -->
+                                            <input name="stay" type="text" class="time" value=" " style="height:30px;border-radius:5px;background:#F9F9F9;width:100%;border:1px solid #D5D5D5;padding-left:15px;" data-default="比较好比较好"/>
+                                            <span class="help-block">请输入停留时间</span>
+                                        </div>
+                                    </div> 
+                                     <div class="form-group" style="height:244px">
+                                        <label class="col-md-2 col-xs-12 control-label">预览：</label>
+                                        
+                                        <div class="col-md-6 col-xs-12" style="width:420px;height:198px;border:1px solid #ccc;border-radius:5px;margin-top:15px">   
+                                        	<div id="previewBar">                                         
+                                            	<div class="preview" id="preview">
+                                            	
+                                            	</div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+                                </div>
+                                <!-- <div class="panel-footer" style="background-color:#F2F2F1">
+                                    <button class="btn btn-default">清空</button>                                    
+                                    <button class="btn btn-primary pull-right self-submit">提交</button>
+                                </div> -->
+                            
+                            </div>
+                            
+                        </div>
+                    </div>                    
+                    <div class="" style="background-color:#F2F2F1">
+                        <div class="col-md-2 col-xs-12" style="text-align:right;margin-left:50px;"><button class="btn btn-default">清空</button></div>                                 
+                        <div class="col-md-7 col-xs-12" style="text-align:right;margin-left:100px;"><button class="btn btn-primary pull-right">提交</button></div>
+                        
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT WRAPPER -->                                                
+            </div>            
+            <!-- END PAGE CONTENT -->
+        </div>
+        <!-- END PAGE CONTAINER -->
+        
+        <!-- MESSAGE BOX-->
+        
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times"></span> 已超出情报板！</div>
+                    <div class="mb-content">
+                        <p>内容已超出情报板尺寸,请重新输入</p>                    
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-lg mb-control-yes">确定</button>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>         
+        <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row1">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times"></span> 提交内容？</div>
+                    <div class="mb-content">
+                        <p>确定提交此内容吗？</p>                    
+                    </div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-lg mb-control-yes">确定</button>
+                            <button class="btn btn-default btn-lg mb-control-close">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    <!-- START SCRIPTS -->
+        <!-- START PLUGINS -->
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery.min.js}"></script>
+        
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery-ui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap.min.js}"></script>                
+        <!-- END PLUGINS -->
+        
+        <!-- THIS PAGE PLUGINS -->
+        <script type='text/javascript' th:src='@{/js/plugins/icheck/icheck.min.js}'></script>
+        <script type="text/javascript" th:src="@{/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js}"></script>
+        
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-datepicker.js}"></script>                
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-file-input.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-select.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/tagsinput/jquery.tagsinput.min.js}"></script>
+        <!-- END THIS PAGE PLUGINS -->       
+        <script type="text/javascript" th:src="@{/js/informationBoard/add.js}"></script>
+        
+        
+        <script type="text/javascript" th:src="@{/js/plugins.js}"></script>        
+        <script type="text/javascript" th:src="@{/js/actions.js}"></script>        
+        <!-- END TEMPLATE -->
+    <!-- END SCRIPTS -->    
+    	<script type="text/javascript">
+   
+		    var textAlign = {1: "center", 2: "left", 3: "right"}
+		
+		    var preview = function () {
+		        // 获取内容
+		        var text = $("textarea[name=content]").val();
+		
+		        // 将内容添加到预览框
+		        $("#preview").html(text);
+		
+		        // 获取情报板尺寸
+		        var boardSize = $("select[name=boardSize] option:selected").val().split('*');
+		
+		        // 获取字体
+		        var fontFamily = $("select[name=font] option:selected").html();
+		
+		        // 获取字体大小
+		        var fontSize = $("select[name=fontSize] option:selected").html();
+		
+		        // 获取字体颜色
+		        var fontColor = $("select[name=fontColor] option:selected").html();
+		        var color = "";
+		        switch (fontColor) {
+		            case "黄色":
+		                color = "yellow";
+		                break;
+		            case "绿色":
+		                color = "green";
+		                break;
+		            case "红色":
+		                color = "red";
+		                break;
+		            default:
+		                color = "#363636"
+		        }
+		
+		        // 对其方式
+		        var align = $("select[name=align] option:selected").val();
+		        // 预览框写入css
+		        // $("#preview").css({"color":color,"textAlign":textAlign[align], "fontFamily": fontFamily, "fontSize":fontSize, "color": fontColor,"width":boardSize[0],"height":boardSize[1],"background",'#000'})
+		        $("#preview").css("color", color);
+		        $("#preview").css("fontFamily", fontFamily);
+		        $("#preview").css("font-size", fontSize + "px");
+		        $("#preview").css("textAlign", textAlign[align]);
+		        $("#previewBar").css("width",boardSize[0]);
+		        $("#previewBar").css("height",boardSize[1]);
+		        $("#previewBar").css("background",'#000'); 
+		      
+		        /* <![CDATA[ */
+		        	if(boardSize[1]<$("#preview").height()||boardSize[0]<$("#preview").width()){
+		        		 var box = $("#mb-remove-row");
+		 			    box.addClass("open");
+		 			    box.find(".mb-control-yes").on("click",function(){
+		 			    	box.removeClass("open");	
+		 			    })
+		        	}
+		       /*  ]]> */
+		        
+		    }
+		    $('.self-submit').click(function(){
+    		    var box = $("#mb-remove-row1");
+			    box.addClass("open");
+			    box.find("#mb-remove-row .mb-control-yes").on("click",function(){
+			    	box.removeClass("open");	
+			    })
+    	  })
+		
+	</script>               
+    </body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="" class="body-full-height">
+    <head>        
+        <title>信息添加</title>            
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" id="theme" th:href="@{/css/theme-default.css}"/>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/informationBoard/add.css}"/> 
+    </head>
+    <body>
+        <div class="page-container">       
+            <div class="page-content" style="margin-left:0px;">              
+                <ul class="breadcrumb">
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">信息发布</a></li>
+                    <li class="active">信息添加</li>
+                </ul>
+                <div class="page-title">                    
+                    <h2><span class="fa fa-arrow-circle-o-left"></span>信息添加</h2>
+                    <div th:each="id:${ids}" style="display:none;">  
+						<div th:text="${id}" class="getSendId"></div>  
+					</div>
+                </div>
+                <div class="page-title ">                    
+                    <div class="row ">
+                        <div class="form-group">
+                            <div class="col-md-3">
+                                <label class="pull-left control-label">已选情报板：</label>
+                                <div class="col-md-7">
+                                    <select class="selectpicker form-control select fff orderBoardSize" id="orderBoardSize">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="javascript:window.history.back()" class="btn btn-primary search pull-right" style="margin-right:20px;border-radius:3px;margin-top:-18px;"><span class="fa fa-mail-reply"></span>返回</a>
+                    </div>
+                </div>
+               <!--  <div class="page-content-wrap pull-left application">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default">
+                                <div class="panel-body clearfix">
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div> -->
+                <div th:each="id:${ids}" style="display:none;">  
+                    <div th:text="${id}" class="getSendId"></div>  
+                </div>
+                
+                <div class="page-content-wrap editAddCms">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default bodyInfos">
+                                <div class="panel-body clearfix">
+                                    <div class="width50 pull-left">
+                                       <div class="clearfix">
+                                            <label class="pull-left">主题名称：</label>
+                                            <div class="pull-left conWidth">                                                                                            
+                                                <input name="" type="text" class="theme fff form-control" value=" "/>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                                <label class="pull-left">命令类型：</label>
+                                                <div class="pull-left conWidth">                                                                                            
+                                                    <select class="selectpicker form-control select fff commandType" id="commandType">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <label class="pull-left">情报板类型：</label>
+                                                <div class="pull-left conWidth">                                                                                            
+                                                    <select name="boardSize" class="selectpicker select form-control boardSize" id="boardSize">
+                                                    </select>
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <label class="pull-left">字体：</label>
+                                                <div class="pull-left clearfix fontFamily">
+                                                    <div style="font-family: '宋体';" fontIndex="1" class="pull-left fontFamilyItem">宋体</div>
+                                                    <div style="font-family: '仿宋体';" fontIndex="2" class="pull-left fontFamilyItem">仿宋体</div>
+                                                    <div style="font-family: '黑体';" fontIndex="3" class="pull-left fontFamilyItem">黑体</div>
+                                                    <div style="font-family: '隶书';" fontIndex="4" class="pull-left fontFamilyItem">隶书</div>
+                                                    <div style="font-family: '楷体';" fontIndex="5" class="pull-left fontFamilyItem">楷体</div>
+                                                    <div style="display: none;" class="fontFamilyItemHidden hiddenDiv"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <label class="pull-left">字体大小：</label>
+                                                <div class="pull-left clearfix fontSize">
+                                                    <div fontIndex="1" class="pull-left fontSizeItem">16</div>
+                                                    <div fontIndex="2" class="pull-left fontSizeItem">24</div>
+                                                    <div fontIndex="3" class="pull-left fontSizeItem">32</div>
+                                                    <div fontIndex="4" class="pull-left fontSizeItem">48</div>
+                                                    <div fontIndex="5" class="pull-left fontSizeItem">64</div>
+                                                    <div style="display:none;" class="fontSizeItemHidden hiddenDiv"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <label class="pull-left">字体颜色：</label>
+                                                <div class="pull-left clearfix fontColorWrap">
+                                                    <div class="fontColorBar pull-left">
+                                                        <div fontIindex="1" class="fontColor borderUnSelect" colorAttr="#FF0000">
+                                                            
+                                                        </div>      
+                                                    </div>
+                                                    <div class="fontColorBar pull-left"><div fontIndex="2" class="fontColor borderUnSelect" colorAttr="#00FF00"></div></div>
+                                                    <!-- <div class="fontColorBar pull-left"><div fontIndex="3" class="fontColor borderUnSelect" colorAttr="#0000FF"></div></div> -->
+                                                    <div class="fontColorBar pull-left"><div fontIndex="4" class="fontColor borderUnSelect" colorAttr="#FFFF00"></div></div>
+                                                    <!-- <div class="fontColorBar pull-left"><div fontIndex="5" class="fontColor borderUnSelect" colorAttr="#4B0082"></div></div>
+                                                    <div class="fontColorBar pull-left"><div fontIndex="6" class="fontColor borderUnSelect" colorAttr="#00FFFF"></div></div>
+                                                    <div class="fontColorBar pull-left"><div fontIndex="7" class="fontColor borderUnSelect" colorAttr="#FFFFFF"></div></div> -->
+                                                    <div style="display: none;" class="fontColorHidden hiddenDiv"></div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <label class="pull-left">对齐方式：</label>
+                                                <div class="pull-left clearfix conWidth">
+                                                    <div fontIindex="1" class="pull-left textAlign">
+                                                        <img src="/img/informationBoard/居中.png" srcAttr="/img/informationBoard/居中">
+                                                    </div>
+                                                    <div fontIindex="2" class="pull-left textAlign">
+                                                        <img src="/img/informationBoard/居左.png" srcAttr="/img/informationBoard/居左">
+                                                    </div>
+                                                    <div fontIindex="3" class="pull-left textAlign">
+                                                        <img src="/img/informationBoard/居右.png" srcAttr="/img/informationBoard/居右">
+                                                    </div>
+                                                    <div style="display: none;" class="textAlignHidden hiddenDiv"></div>
+
+                                                    <!-- <select name="align1" class="selectpicker form-control align1" id="align1">
+                                                       <option value="">请选择</option>
+                                                       <option value="0">居中</option>
+                                                       <option value="1">居左</option>
+                                                       <option value="2">居右</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <label class="pull-left">特效：</label>
+                                                <div class="pull-left conWidth">
+                                                    <select name="inEffect" class="selectpicker select form-control enter" id="enter">
+                                                        <option value="1">立即</option>
+                                                        <option value="2">闪烁</option>
+                                                        <option value="3">左移</option>
+                                                        <option value="4">上移</option>
+                                                        <option value="5">右移</option>
+                                                        <option value="6">下移</option>
+                                                    </select>
+                                                    
+                                                </div>
+                                            </div>
+                                                   
+                                            <div class="clearfix">
+                                                <label class="pull-left">停留时间：</label>
+                                                <div class="pull-left conWidth">                                                                                            
+                                                    <input name="stay" type="text" class="time fff form-control" value="5" />
+                                                </div>
+                                            </div> 
+                                            <div class="clearfix">
+                                                <label class="pull-left">内容：</label>
+                                                <div class="pull-left conWidth">                                            
+                                                    <textarea name="content" class="form-control content fff" rows="5"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix">
+                                                <label class="pull-left">预览：</label>
+                                                <div class="pull-left editPart">    
+                                                    <div class="cloneCms">                                        
+                                                        <div class="previewBarPer" style="position: relative;">                                      
+                                                            <div class="previewBar">                                         
+                                                                <div class="preview" class="preview">
+                                                                
+                                                                </div>
+                                                            </div>
+                                                            <div class="editBtn" style="position: absolute;display: none;">
+                                                                <span class="fa fa-pencil"></span>
+                                                                <span class="fa fa-trash-o"></span>
+                                                            </div>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="leftBtn">
+                                                <button class="btn btn-primary addNextMessage" cmsCode="">添加下一条</button>
+                                                <button class="btn cancelBtn_Left">取消</button>
+                                            </div>
+                                    </div>
+                                    <div class="width50 pull-left addMessage">
+                                        <h3 class="partOfAddMessage">预览区</h3>
+                                        <div class="finishedMessage">
+                                            
+                                        </div>
+                                        <div class="rightBtn">
+                                            <button class="btn btn-primary">发布</button>
+                                            <button class="btn cancelBtn_right">取消</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <div></div>
+                        </div>  -->       
+                    </div>  
+                       
+                </div>
+            </div>            
+        </div>
+       
+        
+       <!--  <div class="message-box animated fadeIn" data-sound="alert" id="successAlert">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title">
+                        <span class="fa fa-check"></span><span class="alertFont"></span>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <div class="message-box animated fadeIn" data-sound="alert" id="error">
+            <div class="mb-container">
+                <div class="mb-middle">
+                    <div class="mb-title"><span class="fa fa-times"></span><span class="tip"></span></div>
+                    <div class="mb-footer">
+                        <div class="pull-right">
+                            <button class="btn btn-success btn-lg mb-control-yes">是</button>
+                            <button class="btn btn-default btn-lg mb-control-close">否</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/jquery/jquery-ui.min.js}"></script>
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap.min.js}"></script>    
+        <script type="text/javascript" th:src="@{/js/plugins/bootstrap/bootstrap-select.js}"></script>     
+        <script type="text/javascript" th:src="@{/js/informationBoard/select.js}"></script>
+        <script type="text/javascript" th:src="@{/js/informationBoard/switch.js}"></script> 
+        <script type="text/javascript" th:src="@{/js/informationBoard/add.js}"></script> 
+        <script type="text/javascript" th:src="@{/js/plugins.js}"></script>
+        <script type="text/javascript" th:src="@{/js/actions.js}"></script>
+    </body>
+</html>
+
+
+
+
+
+
