@@ -218,7 +218,7 @@ button.btn:focus, inputed.btn:focus {
 
 .cell_select .cell__bd:after {
     content: " ";
-    display: inline-block;
+    display: none;
     height: 6px;
     width: 6px;
     border-width: 2px 2px 0 0;
