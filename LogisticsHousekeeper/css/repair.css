@@ -1,6 +1,7 @@
 html {
     -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%
 }
 
 body {
@@ -19,7 +20,9 @@ a img {
 
 a {
     text-decoration: none;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
 .btn {
@@ -37,6 +40,8 @@ a {
     line-height: 2.55555556;
     border-radius: 5px;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
     overflow: hidden
 }
 
@@ -49,8 +54,12 @@ a {
     left: 0;
     border: 1px solid rgba(0, 0, 0, .2);
     -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -moz-transform: scale(.5);
     transform: scale(.5);
     -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
     transform-origin: 0 0;
     box-sizing: border-box;
     border-radius: 10px
@@ -87,7 +96,9 @@ button.btn, inputed.btn {
     width: 100%;
     border-width: 0;
     outline: 0;
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none
 }
 
 button.btn:focus, inputed.btn:focus {
@@ -103,7 +114,11 @@ button.btn:focus, inputed.btn:focus {
     margin-right: 15px;
     width: 100%;
     -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    -moz-box-flex: 1;
     -webkit-flex: 1;
+    -ms-flex: 1;
+    -moz-flex: 1;
     flex: 1
 }
 
@@ -124,8 +139,12 @@ button.btn:focus, inputed.btn:focus {
     top: 0;
     border-top: 1px solid #d9d9d9;
     -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
     transform-origin: 0 0;
     -webkit-transform: scaleY(.5);
+    -ms-transform: scaleY(.5);
+    -moz-transform: scaleY(.5);
     transform: scaleY(.5)
 }
 
@@ -142,8 +161,12 @@ button.btn:focus, inputed.btn:focus {
     bottom: 0;
     border-bottom: 1px solid #d9d9d9;
     -webkit-transform-origin: 0 100%;
+    -ms-transform-origin: 0 100%;
+    -moz-transform-origin: 0 100%;
     transform-origin: 0 100%;
     -webkit-transform: scaleY(.5);
+    -ms-transform: scaleY(.5);
+    -moz-transform: scaleY(.5);
     transform: scaleY(.5)
 }
 
@@ -154,7 +177,11 @@ button.btn:focus, inputed.btn:focus {
     display: -webkit-flex;
     display: flex;
     -webkit-box-align: center;
+    -ms-box-align: center;
+    -moz-box-align: center;
     -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
     align-items: center
 }
 
@@ -168,8 +195,12 @@ button.btn:focus, inputed.btn:focus {
     border-top: 1px solid #d9d9d9;
     color: #d9d9d9;
     -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
     transform-origin: 0 0;
     -webkit-transform: scaleY(.5);
+    -ms-transform: scaleY(.5);
+    -moz-transform: scaleY(.5);
     transform: scaleY(.5);
     left: 15px
 }
@@ -180,7 +211,11 @@ button.btn:focus, inputed.btn:focus {
 
 .cell__bd {
     -webkit-box-flex: 1;
+    -ms-box-flex: 1;
+    -moz-box-flex: 1;
     -webkit-flex: 1;
+    -ms-flex: 1;
+    -moz-flex: 1;
     flex: 1
 }
 
@@ -196,6 +231,8 @@ button.btn:focus, inputed.btn:focus {
     border: 0;
     outline: 0;
     -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
     background-color: transparent;
     font-size: inherit;
     color: inherit;
@@ -205,6 +242,8 @@ button.btn:focus, inputed.btn:focus {
 
 .inputed::-webkit-inner-spin-button, .inputed::-webkit-outer-spin-button {
     -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
     margin: 0
 }
 
@@ -225,6 +264,8 @@ button.btn:focus, inputed.btn:focus {
     border-color: #c8c8cd;
     border-style: solid;
     -webkit-transform: matrix(.71, .71, -.71, .71, 0, 0);
+    -ms-transform: matrix(.71, .71, -.71, .71, 0, 0);
+    -moz-transform: matrix(.71, .71, -.71, .71, 0, 0);
     transform: matrix(.71, .71, -.71, .71, 0, 0);
     position: relative;
     top: -2px;
@@ -236,6 +277,8 @@ button.btn:focus, inputed.btn:focus {
 
 .select1 {
     -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
     border: 0;
     outline: 0;
     background-color: transparent;
@@ -254,13 +297,21 @@ button.btn:focus, inputed.btn:focus {
     display: flex;
     padding-bottom: 10px;
     -webkit-box-align: center;
+    -ms-box-align: center;
+    -moz-box-align: center;
     -webkit-align-items: center;
+    -ms-align-items: center;
+    -moz-align-items: center;
     align-items: center
 }
 
 .uploader__title {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
+    -ms-box-flex: 1;
+    -ms-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
     flex: 1
 }
 
@@ -312,6 +363,8 @@ button.btn:focus, inputed.btn:focus {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: #fff
 }
@@ -336,6 +389,8 @@ button.btn:focus, inputed.btn:focus {
     top: 50%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     background-color: #d9d9d9
 }
@@ -366,7 +421,9 @@ button.btn:focus, inputed.btn:focus {
     width: 100%;
     height: 100%;
     opacity: 0;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
 .tabbar:before {
@@ -379,8 +436,12 @@ button.btn:focus, inputed.btn:focus {
     border-top: 1px solid #c0bfc4;
     color: #c0bfc4;
     -webkit-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
     transform-origin: 0 0;
     -webkit-transform: scaleY(.5);
+    -ms-transform: scaleY(.5);
+    -moz-transform: scaleY(.5);
     transform: scaleY(.5)
 }
 
@@ -388,12 +449,18 @@ button.btn:focus, inputed.btn:focus {
     display: block;
     -webkit-box-flex: 1;
     -webkit-flex: 1;
+    -ms-box-flex: 1;
+    -ms-flex: 1;
+    -moz-box-flex: 1;
+    -moz-flex: 1;
     flex: 1;
     padding: 5px 0 0;
     font-size: 0;
     color: #999;
     text-align: center;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -ms-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 
 .tabbar__item.bar__item_on .tabbar__icon, .tabbar__item.-bar__item_on .tabbar__icon > i, .tabbar__item.bar__item_on .tabbar__label {
@@ -435,23 +502,9 @@ button.btn:focus, inputed.btn:focus {
 }
 #footer a{
     display: inline-block;
-    padding-left: 450px;
+    padding-left: 22%;
     overflow: hidden;
     margin-top: 40px;
 
 }
-@media screen and (min-height: 438px) {
-    .msg__extra-area {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center
-    }
-}
 
-@media screen and (min-width: 1024px) {
-    .dialog {
-        width: 35%
-    }
-}

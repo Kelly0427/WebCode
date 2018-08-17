@@ -1,33 +1,24 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-/*-- reset --*/
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
 article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
 ol,ul{list-style:none;margin:0px;padding:0px;}
 blockquote,q{quotes:none;}
 blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
 table{border-collapse:collapse;border-spacing:0;}
-/*-- start editing from here --*/
+
 a{text-decoration:none;}
-.txt-rt{text-align:right;}/* text align right */
-.txt-lt{text-align:left;}/* text align left */
-.txt-center{text-align:center;}/* text align center */
-.float-rt{float:right;}/* float right */
-.float-lt{float:left;}/* float left */
-.clear{clear:both;}/* clear float */
-.pos-relative{position:relative;}/* Position Relative */
-.pos-absolute{position:absolute;}/* Position Absolute */
-.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
-.vertical-top{	vertical-align:top;}/* vertical align top */
-nav.vertical ul li{	display:block;}/* vertical menu */
-nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+.txt-rt{text-align:right;}
+.txt-lt{text-align:left;}
+.txt-center{text-align:center;}
+.float-rt{float:right;}
+.float-lt{float:left;}
+.clear{clear:both;}
+.pos-relative{position:relative;}
+.pos-absolute{position:absolute;}
+.vertical-base{	vertical-align:baseline;}
+.vertical-top{	vertical-align:top;}
+nav.vertical ul li{	display:block;}
+nav.horizontal ul li{	display: inline-block;}
 img{max-width:100%;}
-/*-- end reset --*/
-/*--main-content-starts-here--*/
 body {
     font-family: 'Open Sans', sans-serif;
     width: 100%;
@@ -48,7 +39,6 @@ h1,h2,h3,h4,h5,h6{
 
 }
 .top-buttons-agileinfo {
-    /* float: right; */
     text-align: right;
     padding: 2em 3em;
 }
@@ -107,7 +97,6 @@ h1 {
     letter-spacing: 1px;
     width: 164px;
     padding: 16px 10px 16px 24px;
-    /* background: rgba(0, 0, 0, 0.42); */
 }
 .icon-w3 {
     display: inline-block;
@@ -193,8 +182,7 @@ a.forgot-w3layouts {
 	font-weight: 600;
 	font-family: 'Open Sans', sans-serif;
 }
-/*--main-content-ends-here--*/
-/*--register-form--*/
+
 .contact-w3-agileits h3 {
     color: #fff;
     font-size: 20px;
@@ -252,8 +240,7 @@ label p {
     display: inline-block;
 }
 
-/*--//register-form--*/
-/*--copy-right-starts-here--*/
+
 .copyright p {
     margin: 0 auto;
     text-align: center;
@@ -280,23 +267,23 @@ label p {
     -o-transition: 0.3s all;
     -ms-transition: 0.3s all;
 }
-/*--copy-right-ends-here--*/
+
 ::-webkit-input-placeholder{
 	color:#fff;
 }
 
-:-moz-placeholder { /* Firefox 18- */
+:-moz-placeholder {
    color: #fff; 
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {
    color: #fff;  
 }
 
 :-ms-input-placeholder {  
    color: #fff;  
 }
-/*--responsive--*/
+
 @media(max-width:1440px){
 	h1 {
 		margin: 0px 0 35px 0;
@@ -622,4 +609,3 @@ label p {
 		line-height: 26px;
 	}
 }
-/*--responsive--*/
