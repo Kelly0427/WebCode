@@ -16,7 +16,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
-    font-size: 12px;
+    font-size: 20px;
 }
 
 a {
@@ -71,6 +71,7 @@ a:hover {
     text-align: center;
     position: relative;
     margin-top: 65px;
+    font-size: 18px;
 }
 
 .tl {
@@ -92,5 +93,11 @@ a:hover {
 
 .tl p {
     line-height: 14px;
-    color: #999;
+    color: #fafafa;
+    font-size: 18px;
+}
+#nav{
+    height: 162px;
+    width: auto;
+    background-color: #169bd5;
 }

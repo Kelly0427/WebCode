@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>时间轴</title>
-
+    <meta charset="UTF-8">
+    <title>智能报修系统</title>
     <link href="../css/timeline.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript">
         $(function(){
-
             //首页大事记
             $('.course_nr2 li').hover(function(){
                 $(this).find('.tl').slideDown(600);
             },function(){
                 $(this).find('.tl').slideUp(400);
             });
-
         });
     </script>
 </head>
 <body>
-
-    <div class="clearfix course_nr">
+    <div class="clearfix course_nr" id="nav">
         <ul class="course_nr2">
             <li>
                 申请
