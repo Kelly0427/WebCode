@@ -7,137 +7,134 @@
 </head>
 <link rel="stylesheet" href="../css/repair.css"/>
 <body>
-<form action="" method="post" id="_form" name="_form" enctype="multipart/form-data">
-    <div class="cells cells_form" id="listArea">
-        <!--<input id="openid" name="openid" style="display:none" type="text">
-        <input id="subOpenid" name="subOpenid" style="display:none" type="text" value="">
-        <input style="display:none" name="universityId" type="text" value="gh_efc77c55bb18">-->
-        <div class="cell cell_select cell_select-after">
-            <div class="cell__hd">
-                <label for="" class="label1">　故障区域</label>
+    <form action="" method="post" id="_form" name="_form" enctype="multipart/form-data">
+        <div class="cells cells_form" id="listArea">
+            <div class="cell cell_select cell_select-after">
+                <div class="cell__hd">
+                    <label for="" class="label1">　故障区域</label>
+                </div>
+                <div class="cell__bd">
+                    <select class="select1" onchange="changeSelect(this);" id="repairArea0" data-key="repairArea" data-launchnum="2">
+                        <option value="null">请选择</option><option value="f4c5dadcc50eb57e145956142be6580e">教学楼</option>
+                        <option value="b3fd6b484e931087372720b5d7648bfe">公寓楼</option>
+                        <option value="6a747ca09cf4cc856e1e09fb671e10a7">食堂</option>
+                    </select>
+                    <input class="repairArea" style="display:none" type="text">
+                </div>
             </div>
-            <div class="cell__bd">
-                <select class="select1" onchange="changeSelect(this);" id="repairArea0" data-key="repairArea" data-launchnum="2">
-                    <option value="null">请选择</option><option value="f4c5dadcc50eb57e145956142be6580e">教学楼</option>
-                    <option value="b3fd6b484e931087372720b5d7648bfe">公寓楼</option>
-                    <option value="6a747ca09cf4cc856e1e09fb671e10a7">食堂</option>
-                </select>
-                <input class="repairArea" style="display:none" type="text">
+            <div class="cell cell_select cell_select-after" style="display:none">
+                <div class="cell__hd">
+                    <label for="" class="label1"></label>
+                </div>
+                <div class="cell__bd">
+                    <select class="select1" onchange="changeSelect(this);" id="repairArea1" data-key="repairArea" data-launchnum="2">
+                        <option value="null">请继续选择</option>
+                        <option value="9a8c17c7346e06b6fb58c506408c04dc">1号教学楼</option>
+                        <option value="e28a61c351fcc0628efbee499fcbd90f">2号教学楼</option>
+                    </select>
+                    <input class="repairArea" style="display:none" type="text">
+                </div>
             </div>
-        </div>
-        <div class="cell cell_select cell_select-after" style="display:none">
-            <div class="cell__hd">
-                <label for="" class="label1"></label>
+            <input data-value="故障区域" id="repairArea" style="display:none" name="repairArea" type="text">
+            <div class="cell">
+                <div class="cell__hd">
+                    <label class="label1">详细地址</label>
+                </div>
+                <div class="cell__bd">
+                    <input class="inputed check" data-value="详细地址" data-reqired="1" data-datavalidate="0" name="repairAddress" type="text" maxlength="100" placeholder="请输入故障详细地址">
+                </div>
             </div>
-            <div class="cell__bd">
-                <select class="select1" onchange="changeSelect(this);" id="repairArea1" data-key="repairArea" data-launchnum="2">
-                    <option value="null">请继续选择</option>
-                    <option value="9a8c17c7346e06b6fb58c506408c04dc">1号教学楼</option>
-                    <option value="e28a61c351fcc0628efbee499fcbd90f">2号教学楼</option>
-                </select>
-                <input class="repairArea" style="display:none" type="text">
+            <div class="cell cell_select cell_select-after" style="">
+                <div class="cell__hd">
+                    <label for="" class="label1">　报修项目</label>
+                </div>
+                <div class="cell__bd">
+                    <select class="select1" onchange="changeSelect(this);" id="repairProject0" data-key="repairProject" data-launchnum="2">
+                        <option value="null">请选择</option><option value="caea626d9d49480f66c20b2287e4588f">水类</option>
+                        <option value="710461290c82c05d84a0622bb4512ee9">电类</option>
+                    </select>
+                    <input class="repairProject" style="display:none" type="text">
+                </div>
             </div>
-        </div>
-        <input data-value="故障区域" id="repairArea" style="display:none" name="repairArea" type="text">
-        <div class="cell">
-            <div class="cell__hd">
-                <label class="label1">详细地址</label>
+            <div class="cell cell_select cell_select-after" style="display:none">
+                <div class="cell__hd">
+                    <label for="" class="label"></label>
+                </div>
+                <div class="cell__bd">
+                    <select class="select1" onchange="changeSelect(this);" id="repairProject1" data-key="repairProject" data-launchnum="2">
+                        <option value="null">请继续选择</option>
+                        <option value="354609557d7206d67150834e170babc8">水龙头</option>
+                    </select>
+                    <input class="repairProject" style="display:none" type="text">
+                </div>
             </div>
-            <div class="cell__bd">
-                <input class="inputed check" data-value="详细地址" data-reqired="1" data-datavalidate="0" name="repairAddress" type="text" maxlength="100" placeholder="请输入故障详细地址">
+            <input data-value="报修项目" id="repairProject" style="display:none" name="repairProject" type="text">
+            <div class="cell">
+                <div class="cell__hd">
+                    <label class="label1">报修详细<br>情况描述</label>
+                </div>
+                <div class="cell__bd">
+                    <textarea class="inputed check" data-value="报修详细情况描述" data-reqired="1" name="repairContent" maxlength="100" placeholder="请输入报修详细"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="cell cell_select cell_select-after" style="">
-            <div class="cell__hd">
-                <label for="" class="label1">　报修项目</label>
+            <div class="cell">
+                <div class="cell__hd">
+                    <label class="label1">报修人</label>
+                </div>
+                <div class="cell__bd">
+                    <input class="inputed check" data-value="报修人" data-reqired="1" data-datavalidate="0" name="repairMan" type="text" maxlength="10" placeholder="请输入您的姓名">
+                </div>
             </div>
-            <div class="cell__bd">
-                <select class="select1" onchange="changeSelect(this);" id="repairProject0" data-key="repairProject" data-launchnum="2">
-                    <option value="null">请选择</option><option value="caea626d9d49480f66c20b2287e4588f">水类</option>
-                    <option value="710461290c82c05d84a0622bb4512ee9">电类</option>
-                </select>
-                <input class="repairProject" style="display:none" type="text">
+            <div class="cell"><div class="cell__hd">
+                <label class="label">联系方式</label>
             </div>
-        </div>
-        <div class="cell cell_select cell_select-after" style="display:none">
-            <div class="cell__hd">
-                <label for="" class="label"></label>
+                <div class="cell__bd">
+                    <input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="inputed check" data-value="联系方式" data-reqired="1" data-datavalidate="1" name="repairManPhone" type="tel" maxlength="11" placeholder="　请输入联系方式，方便维修师傅联系">
+                </div>
             </div>
-            <div class="cell__bd">
-                <select class="select1" onchange="changeSelect(this);" id="repairProject1" data-key="repairProject" data-launchnum="2">
-                    <option value="null">请继续选择</option>
-                    <option value="354609557d7206d67150834e170babc8">水龙头</option>
-                </select>
-                <input class="repairProject" style="display:none" type="text">
-            </div>
-        </div>
-        <input data-value="报修项目" id="repairProject" style="display:none" name="repairProject" type="text">
-        <div class="cell">
-            <div class="cell__hd">
-                <label class="label1">报修详细<br>情况描述</label>
-            </div>
-            <div class="cell__bd">
-                <textarea class="inputed check" data-value="报修详细情况描述" data-reqired="1" name="repairContent" maxlength="100" placeholder="请输入报修详细"></textarea>
-            </div>
-        </div>
-        <div class="cell">
-            <div class="cell__hd">
-                <label class="label1">报修人</label>
-            </div>
-            <div class="cell__bd">
-                <input class="inputed check" data-value="报修人" data-reqired="1" data-datavalidate="0" name="repairMan" type="text" maxlength="10" placeholder="请输入您的姓名">
-            </div>
-        </div>
-        <div class="cell"><div class="cell__hd">
-            <label class="label">联系方式</label>
-        </div>
-            <div class="cell__bd">
-                <input onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" class="inputed check" data-value="联系方式" data-reqired="1" data-datavalidate="1" name="repairManPhone" type="tel" maxlength="11" placeholder="　请输入联系方式，方便维修师傅联系">
-            </div>
-        </div>
-        <div class="cell">
-            <div class="cell__bd">
-                <div class="uploader">
-                    <div class="uploader__hd">
-                        <p class="uploader__title">上传图片</p>
-                    </div>
-                    <div class="uploader_bd clearfix uploader_over ">
-                        <ul class="uploader_files" id="uploaderFiles">
-                            <span></span>
-                        </ul>
-                        <div class="uploader__input-box repair-input-uploader">
-                            <input data-key="picURL" id="uploaderInput" class="uploader__input js_file" type="file" accept="image/*">
+            <div class="cell">
+                <div class="cell__bd">
+                    <div class="uploader">
+                        <div class="uploader__hd">
+                            <p class="uploader__title">上传图片</p>
+                        </div>
+                        <div class="uploader_bd clearfix uploader_over ">
+                            <ul class="uploader_files" id="uploaderFiles">
+                                <span></span>
+                            </ul>
+                            <div class="uploader__input-box repair-input-uploader">
+                                <input data-key="picURL" id="uploaderInput" class="uploader__input js_file" type="file" accept="image/*">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <input class="check" data-value="上传图片" data-reqired="1" id="picURL" style="display:none" name="picURL" type="text">
         </div>
-        <input class="check" data-value="上传图片" data-reqired="1" id="picURL" style="display:none" name="picURL" type="text">
-    </div>
 
-    <div class="repair-btn" id="form_sub"><button class="btn btn_primary" id="submitBx" style="background: #288feb;">提交</button>
-        <div class="btn btn_default" id="jjbx">紧急报修</div>
+        <div class="repair-btn" id="form_sub"><button class="btn btn_primary" id="submitBx" style="background: #288feb;">提交</button>
+            <div class="btn btn_default" id="jjbx">紧急报修</div>
+        </div>
+    </form>
+    <div class="tabbar" id="footer">
+        <a href="javascript:;" class="tabbar__item  bar__item" id="gggc">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_square.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+            <p class="tabbar__label">广场/公告</p>
+        </a>
+        <a href="javascript:;" class="tabbar__item" id="wybx">
+            <img src="../images/icon_repair_active.png" alt="" class="tabbar__icon">
+            <p class="tabbar__label">我要报修</p>
+        </a>
+        <a href="javascript:;" class="tabbar__item" id="bxjl">
+             <span style="display: inline-block;position: relative;">
+                 <img src="../images/icon_record.png" alt="" class="tabbar__icon">
+                 <span class="badge badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+             </span>
+             <p class="tabbar__label">报修记录</p>
+        </a>
     </div>
-</form>
-<div class="tabbar" id="footer">
-    <a href="javascript:;" class="tabbar__item  bar__item" id="gggc">
-        <span style="display: inline-block;position: relative;">
-            <img src="../images/icon_square.png" alt="" class="tabbar__icon">
-            <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
-        </span>
-        <p class="tabbar__label">广场/公告</p>
-    </a>
-    <a href="javascript:;" class="tabbar__item" id="wybx">
-        <img src="../images/icon_repair_active.png" alt="" class="tabbar__icon">
-        <p class="tabbar__label">我要报修</p>
-    </a>
-    <a href="javascript:;" class="tabbar__item" id="bxjl">
-         <span style="display: inline-block;position: relative;">
-             <img src="../images/icon_record.png" alt="" class="tabbar__icon">
-             <span class="badge badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
-         </span>
-         <p class="tabbar__label">报修记录</p>
-    </a>
-</div>
 </body>
 </html>
