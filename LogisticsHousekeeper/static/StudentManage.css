@@ -6,7 +6,7 @@ em,i{ font-style: normal;}
 
 .scroll-bar p {background-color:#fffae3;height: 1.2rem; color: #777; font-size: 14px; padding-top: 2px;}
 
-.scroll-bar span{ position: absolute; right: 0.2rem; top: 3px; background:url(../image/icon_clear.png) no-repeat;background-size:1.0rem 1.0rem; width:1.0rem; height:1.0rem;}
+.scroll-bar span{ position: absolute; right: 0.2rem; top: 3px; background:url(../images/icon_clear.png) no-repeat;background-size:1.0rem 1.0rem; width:1.0rem; height:1.0rem;}
 
 .section{ margin-top: 1.2rem;}
 
@@ -96,15 +96,15 @@ em,i{ font-style: normal;}
 
 .weui-panel__bd .time-tips i{ width: 80px;height: 30px; display: inline-block; position: absolute; left: -10px; text-align: center; font-size: 0.75rem; line-height: 28px;}
 
-.weui-panel__bd .time-tips i.return-tips{ background: url(../image/icon_return.png) no-repeat; background-size: 70px 28px; color: #FFA500;}
+.weui-panel__bd .time-tips i.return-tips{ background: url(../images/icon_return.png) no-repeat; background-size: 70px 28px; color: #FFA500;}
 
-.weui-panel__bd .time-tips i.gray-tips{ background: url(../image/icon_gray.png) no-repeat; background-size: 70px 28px; color: #C8C8C8;}
+.weui-panel__bd .time-tips i.gray-tips{ background: url(../images/icon_gray.png) no-repeat; background-size: 70px 28px; color: #C8C8C8;}
 
-.weui-panel__bd .time-tips i.complete-tips{ background: url(../image/icon_complete.png) no-repeat; background-size: 70px 28px; color: #24AD38;}
+.weui-panel__bd .time-tips i.complete-tips{ background: url(../images/icon_complete.png) no-repeat; background-size: 70px 28px; color: #24AD38;}
 
-.weui-panel__bd .time-tips i.blue-tips{ background: url(../image/icon_blue.png) no-repeat; background-size: 70px 28px; color: #2772ee;}
+.weui-panel__bd .time-tips i.blue-tips{ background: url(../images/icon_blue.png) no-repeat; background-size: 70px 28px; color: #2772ee;}
 
-.weui-panel__bd .time-tips i.red-tips{ background: url(../image/icon_red.png) no-repeat; background-size: 70px 28px; color: #ff2f2f;}
+.weui-panel__bd .time-tips i.red-tips{ background: url(../images/icon_red.png) no-repeat; background-size: 70px 28px; color: #ff2f2f;}
 
 .weui-panel__bd p span{ width: 70%; display:inline-block; word-break: break-all;}
 
@@ -143,37 +143,37 @@ em,i{ font-style: normal;}
 .title-time span:first-child{ margin-right: 30px;}
 
 /*底部按钮*/
-.icon-square{ background: url(../../Common_images/icon_square.png) no-repeat center; background-size: 27px 27px;}
+.icon-square{ background: url(../images/icon_square.png) no-repeat center; background-size: 27px 27px;}
 
-.icon-repair{ background: url(../../Common_images/icon_repair.png) no-repeat center;background-size: 27px 27px;}
+.icon-repair{ background: url(../images/icon_repair.png) no-repeat center;background-size: 27px 27px;}
 
-.icon-record{ background: url(../../Common_images/icon_record.png) no-repeat center;background-size: 27px 27px;}
+.icon-record{ background: url(../images/icon_record.png) no-repeat center;background-size: 27px 27px;}
 
-.weui-bar__item_on .icon-square{ background:url(../../Common_images/icon_square_active.png) no-repeat center; background-size: 27px 27px;}
+.weui-bar__item_on .icon-square{ background:url(../images/icon_square_active.png) no-repeat center; background-size: 27px 27px;}
 
-.weui-bar__item_on .icon-repair{ background:url(../../Common_images/icon_repair_active.png) no-repeat center; background-size: 27px 27px;}
+.weui-bar__item_on .icon-repair{ background:url(../images/icon_repair_active.png) no-repeat center; background-size: 27px 27px;}
 
-.weui-bar__item_on .icon-record{ background:url(../../Common_images/icon_record_active.png) no-repeat center; background-size: 27px 27px;}
+.weui-bar__item_on .icon-record{ background:url(../images/icon_record_active.png) no-repeat center; background-size: 27px 27px;}
 
 /*广场/公告顶部切换按钮颜色*/
 
-.weui-navbar__item{ background: #eaeaea;}
-.weui-navbar__item.weui-bar__item_on{ background: #ffffff;}
+.navbar__item{ background: #eaeaea;}
+.navbar__item.bar__item_on{ background: #ffffff;}
 
-.weui-cell__bd p.notice-content{ width: 13rem; line-height: 1.3rem;overflow:hidden;  text-overflow:ellipsis;  white-space:nowrap;}
+.cell__bd p.notice-content{ width: 13rem; line-height: 1.3rem;overflow:hidden;  text-overflow:ellipsis;  white-space:nowrap;}
 
 
 /*报修流程*/
-.weui-cell-process{
+.cell-process{
     background: #ffffff;
     position: relative;
 }
-.weui-cell-process span{
+.cell-process span{
     font-size: 0.75rem;
     border-left: 2px solid #ff6600;
     padding-left: 8px;
 }
-.weui-cell-process i{
+.cell-process i{
     position: absolute;
     right: 10px;
     top: 18px;
@@ -184,7 +184,7 @@ em,i{ font-style: normal;}
     border-bottom: 8px solid #ff6600;
 
 }
-.weui-cell-process i.open{
+.cell-process i.open{
     width: 0;
     height: 0;
     border-left: 5px solid transparent;
@@ -205,12 +205,12 @@ em,i{ font-style: normal;}
     height: auto;
 }
 
-.weui-cell__bd_title{ color: #228feb; font-size: 17px;}
-.weui-media-box_appmsg .weui-media-box__hd_img{
+.cell__bd_title{ color: #228feb; font-size: 17px;}
+.media-box_appmsg .media-box__hd_img{
     position: relative;
     width: 40px;
 }
-.weui-media-box_appmsg .weui-media-box__hd_img span{
+.media-box_appmsg .media-box__hd_img span{
     position: absolute;
     top: 42px;
     left: 0px;;
@@ -221,7 +221,7 @@ em,i{ font-style: normal;}
     color: #999;
 }
 
-.weui-media-box_appmsg .weui-media-box__thumb_img{
+.media-box_appmsg .media-box__thumb_img{
     height: 40px;
     width: 40px;
 }
@@ -232,25 +232,25 @@ em,i{ font-style: normal;}
     margin-right:5px;
     margin-top: 5px;
 }
-.weui-media-box__desc_add{
-    width: 60%;
-    display: inline-block;
+.media-box__desc_add{
+    width: 100%;
+    /*display: inline-block;*/
     color: #999999;
     font-size: 0.65rem;;
 }
 
-.weui-media-box__title_gg{
+.media-box__title_gg{
     font-size: 0.75rem;
     margin-bottom: 5px;
 }
-.weui-media-box_btn{
+.media-box_btn{
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 40%;
+    right: 2%;
     padding: 1px 9px;
     border-radius: 90px;
     background: #ffffff;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 .btn_blue{
     color: #155aba;
@@ -292,7 +292,7 @@ em,i{ font-style: normal;}
     position: absolute;
     left: 0.4rem;
     top: 3px;
-    background: url(../image/icon_gdgg.png) no-repeat center;
+    background: url(../images/icon_gdgg.png) no-repeat center;
     background-size: 1.0rem 1.0rem;
     width: 1.0rem;
     height: 1.0rem;

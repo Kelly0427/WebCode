@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>智能报修系统</title>
     <link href="../css/timeline.css" rel="stylesheet" type="text/css" />
+    <link href="../css/repair.css" rel="stylesheet" type="text/css">
+    <link href="../static/StudentManage.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
     <script type="text/javascript">
         $(function(){
@@ -55,6 +57,123 @@
                 </div>
             </li>
         </ul>
+    </div>
+    <div id="content">
+        <div class="cells" style="line-height: 30px;margin-top: 1.17647059em;">
+            <a class="cell cell_access" href="#">
+                <div class="cell__hd"><img src="../images/icon_fwzn.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="cell__bd">
+                    <p class="cell__bd_title">服务指南</p>
+                </div>
+                <div class="cell__ft">
+                </div>
+            </a>
+            <a class="cell cell_access" href="#" style="line-height: 60px;">
+                <div class="cell__bd">
+                    <p>服务指南内容</p>
+                </div>
+            </a>
+        </div>
+        <div class="cells" style="line-height: 30px;margin-top: 1.17647059em;">
+            <a class="cell cell_access" href="#" >
+                <div class="cell__hd"><img src="../images/icon_gg.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="cell__bd">
+                    <p class="cell__bd_title">公告</p>
+                </div>
+                <div class="cell__ft">
+                </div>
+            </a>
+            <a class="cell cell_access" href="#" style="line-height: 60px;">
+                <div class="cell__bd">
+                    <p>公告内容</p>
+                </div>
+            </a>
+        </div>
+        <div class="cells" style="line-height: 30px;margin-top: 1.17647059em;">
+            <a class="cell cell_access" href="#" >
+                <div class="cell__hd"><img src="../images/icon_bxxx.png" alt="" style="width:20px;margin-right:5px;display:block"></div>
+                <div class="cell__bd">
+                    <p class="cell__bd_title">最新报修</p>
+                </div>
+                <div class="cell__ft">
+                </div>
+            </a>
+            <a class="cell cell_access" href="#">
+                <div class="media-box__hd media-box__hd_img">
+                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                    <p style="margin-top: -25px">赵**</p>
+                </div>
+                <div class="media-box__bd">
+                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                    <div class="cell__hd">
+                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                        <button class="media-box_btn btn_blue">已派工</button>
+                    </div>
+                    <div class="cell__hd">
+                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                    </div>
+                </div>
+            </a>
+            <a class="cell cell_access" href="#">
+                <div class="media-box__hd media-box__hd_img">
+                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                    <p style="margin-top: -25px">赵**</p>
+                </div>
+                <div class="media-box__bd">
+                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                    <div class="cell__hd">
+                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                        <button class="media-box_btn btn_blue">已派工</button>
+                    </div>
+                    <div class="cell__hd">
+                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                    </div>
+                </div>
+            </a>
+            <a class="cell cell_access" href="#">
+                <div class="media-box__hd media-box__hd_img">
+                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                    <p style="margin-top: -25px">赵**</p>
+                </div>
+                <div class="media-box__bd">
+                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                    <div class="cell__hd">
+                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                        <button class="media-box_btn btn_blue">已派工</button>
+                    </div>
+                    <div class="cell__hd">
+                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="tabbar" id="footer">
+        <a href="javascript:;" class="tabbar__item  bar__item" id="gggc">
+            <span style="display: inline-block;position: relative;">
+                <img src="../images/icon_square.png" alt="" class="tabbar__icon">
+                <span class="badge" style="position: absolute;top: -2px;right: -13px;"></span>
+            </span>
+            <p class="tabbar__label">广场/公告</p>
+
+        </a>
+        <a href="javascript:;" class="tabbar__item" id="wybx">
+            <img src="../images/icon_repair_active.png" alt="" class="tabbar__icon">
+            <p class="tabbar__label">我要报修</p>
+        </a>
+        <a href="javascript:;" class="tabbar__item" id="bxjl">
+             <span style="display: inline-block;position: relative;">
+                 <img src="../images/icon_record.png" alt="" class="tabbar__icon">
+                 <span class="badge badge_dot" style="position: absolute;top: 0;right: -6px;"></span>
+             </span>
+            <p class="tabbar__label">报修记录</p>
+        </a>
     </div>
 </body>
 </html>
