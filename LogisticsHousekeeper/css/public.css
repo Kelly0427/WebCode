@@ -470,8 +470,8 @@ button.btn:focus, inputed.btn:focus {
 
 .tabbar__icon {
     display: inline-block;
-    width:50px;
-    height: 50px
+    width:30px;
+    height: 30px
 }
 
 .tabbar__icon > i, i.tabbar__icon {
@@ -561,10 +561,10 @@ a.media-box {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 }
 #content,#_form{
-    margin-bottom: 85px;
+    margin-bottom: 60px;
 }
 #footer {
-    height: 85px;
+    height: 60px;
     position: fixed;
     bottom: 0px;
     left: 0px;
