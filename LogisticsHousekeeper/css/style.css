@@ -54,12 +54,12 @@ h2.sub-agileits-w3layouts,h3.sub-agileits-w3layouts {
     margin-bottom: 2em;
     letter-spacing: 2px;
 }
-.form-w3-agile {
+.form-agile {
     background: rgba(41, 39, 39, 0.46);
     -webkit-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
     -moz-box-shadow: 0px 35px 44px -22px rgba(0,0,0,0.72);
     box-shadow: 0px 35px 44px -22px #1f181b;
-    padding: 60px 40px;
+    padding: 50px 40px;
 }
 .top-buttons-agileinfo a {
     background: rgba(255, 255, 255, 0.15);
@@ -70,7 +70,7 @@ h2.sub-agileits-w3layouts,h3.sub-agileits-w3layouts {
     display: inline-block;
     padding: 9px 26px;
     border: 1px solid #756d6d;
-    margin: 15px 15px 0px 0px;
+    margin: 0px 15px 0px 0px;
     -webkit-transition: 0.3s all;
     -moz-transition: 0.3s all;
     -o-transition: 0.3s all;
@@ -111,7 +111,7 @@ form {
 .form-sub-w3{
 	position:relative;
 }
- .form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+ .form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
     outline: none;
     font-size: 15px;
     color: #ffffff;
@@ -291,7 +291,7 @@ label p {
 	.main-agileits {
 		width: 48%;
 	}
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		font-size: 14px;
 		padding: 10px 10px;
 		margin-bottom: 20px;
@@ -307,7 +307,7 @@ label p {
 		padding: 2em 3em 1.5em;
 	}
 	.snow-container {
-		height: 725px;
+		height: 70%;
 	}
 	.copyright p {
 		margin: 55px 0px 0;
@@ -319,7 +319,7 @@ label p {
 	}
 }
 @media(max-width:1280px){
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		width: 96.3%;
 	}
 }
@@ -336,7 +336,7 @@ label p {
 	.main-agileits {
 		width: 55%;
 	}
-	.form-w3-agile {
+	.form-agile {
 		padding: 40px 35px;
 	}
 	.top-buttons-agileinfo {
@@ -383,7 +383,7 @@ label p {
 	}
 }
 @media(max-width:900px){
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		width: 96%;
 	}
 }
@@ -392,7 +392,7 @@ label p {
 		font-size: 25px;
 		letter-spacing: 3px;
 	}
-	.form-w3-agile {
+	.form-agile {
 		padding: 35px 30px;
 	}
 	.top-buttons-agileinfo {
@@ -437,7 +437,7 @@ label p {
 	.main-agileits {
 		width: 75%;
 	}
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		width: 95.7%;
 	}
 }
@@ -445,7 +445,7 @@ label p {
 	h1 {
 		font-size: 23px;
 	}
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		width: 95.4%;
 	}
 	.p-bottom-w3ls {
@@ -497,10 +497,10 @@ label p {
 	}
 }
 @media(max-width:480px){
-	.form-w3-agile {
+	.form-agile {
 		padding: 30px 25px;
 	}
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		width: 94.2%;
 	}
 	a.forgot-w3layouts {
@@ -524,7 +524,7 @@ label p {
 	h1 {
 		line-height: 30px;
 	}
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		width: 93.1%;
 		font-size: 13px;
 	}
@@ -583,7 +583,7 @@ label p {
 		line-height: 25px;
 		margin: 0px 27px 11px;
 	}
-	.form-w3-agile input[type="text"], .form-w3-agile input[type="password"], .form-w3-agile input[type="email"] {
+	.form-agile input[type="text"], .form-agile input[type="password"], .form-agile input[type="email"] {
 		padding: 7px 7px;
 		margin-bottom: 15px;
 		width: 94.1%;
@@ -591,7 +591,7 @@ label p {
 	a.forgot-w3layouts {
 		padding: 0px 0px;
 	}
-	.form-w3-agile {
+	.form-agile {
 		padding: 23px 23px;
 	}
 	.snow-container {
