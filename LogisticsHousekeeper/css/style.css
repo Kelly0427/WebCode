@@ -136,7 +136,7 @@ a.forgot-w3layouts {
     text-transform: capitalize;
     color: #fff;
 }
-.submit-w3l input[type="submit"] {
+.submit1 input[type="submit"] {
     background: #fff;
     color: #000;
     outline: none;
@@ -157,7 +157,7 @@ a.forgot-w3layouts {
     -o-transition: 0.3s all;
     -ms-transition: 0.3s all;
 }
-.submit-w3l input[type="submit"]:hover{
+.submit1 input[type="submit"]:hover{
     background: #df5799;
 	color:#ffffff;
 	transition: 0.3s all;
@@ -429,7 +429,7 @@ label p {
 	.copyright p {
 		margin: 39px 0px 0;
 	}
-	.submit-w3l input[type="submit"] {
+	.submit1 input[type="submit"] {
 		padding: 10px 38px;
 	}
 }
@@ -516,7 +516,7 @@ label p {
 	.copyright p {
 		margin: 40px 25px 0;
 	}
-	.submit-w3l input[type="submit"] {
+	.submit1 input[type="submit"] {
 		padding: 8px 38px;
 	}
 }
@@ -555,7 +555,7 @@ label p {
 	.top-buttons-agileinfo a {
 		margin: 0px 8px 0px 0px;
 	}
-	.submit-w3l input[type="submit"] {
+	.submit1 input[type="submit"] {
 		font-size: 13px;
 	}
 }
