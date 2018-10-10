@@ -7,6 +7,7 @@
     <link href="../css/public.css" rel="stylesheet" type="text/css">
     <link href="../static/StudentManage.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/scroll.js"></script>
     <script type="text/javascript">
         $(function(){
             //首页大事记
@@ -15,6 +16,31 @@
             },function(){
                 $(this).find('.tl').slideUp(400);
             });
+            $("div.scroll-box").myScroll({
+                speed :114,
+                rowHeight : 96
+            });
+          /*  //获得当前<ul>
+            var $uList = $(".scroll-box ul");
+            var timer = null;
+            //触摸清空定时器
+            $uList.hover(function () {
+                clearInterval(timer);
+            },function () {//离开启动定时器
+                timer = setInterval(function () {
+                    scrollList($uList);
+                },1000);
+            }).trigger("mouseleave"); //自动触发触摸事件
+            //滚动动画
+            function scrollList(obj) {
+                //获得当前<li>的高度
+                var scrollHeight = $("ul li:first").height();
+                //滚动出一个<li>的高度
+                $uList.stop().animate({marginTop:-scrollHeight},0.0005,function () {
+                    //动画结束后，将当前<ul>marginTop置为初始值0状态，再将第一个<li>拼接到末尾。
+                    $uList.css({marginTop:0}).find("li:first").appendTo($uList);
+                });
+            }*/
         });
     </script>
 </head>
@@ -98,58 +124,130 @@
                 <div class="cell__ft">
                 </div>
             </a>
-            <a class="cell cell_access" href="#">
-                <div class="media-box__hd media-box__hd_img">
-                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
-                    <p style="margin-top: -25px">赵**</p>
-                </div>
-                <div class="media-box__bd">
-                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
-                    <div class="cell__hd">
-                        <img src="../images/icon_add.png" alt="" class="icon-add">
-                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
-                        <button class="media-box_btn btn_blue">已派工</button>
-                    </div>
-                    <div class="cell__hd">
-                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
-                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
-                    </div>
-                </div>
-            </a>
-            <a class="cell cell_access" href="#">
-                <div class="media-box__hd media-box__hd_img">
-                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
-                    <p style="margin-top: -25px">赵**</p>
-                </div>
-                <div class="media-box__bd">
-                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
-                    <div class="cell__hd">
-                        <img src="../images/icon_add.png" alt="" class="icon-add">
-                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
-                        <button class="media-box_btn btn_blue">已派工</button>
-                    </div>
-                    <div class="cell__hd">
-                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
-                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
-                    </div>
-                </div>
-            </a>
-            <a class="cell cell_access" href="#">
-                <div class="media-box__hd media-box__hd_img">
-                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
-                    <p style="margin-top: -25px">赵**</p>
-                </div>
-                <div class="media-box__bd">
-                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
-                    <div class="cell__hd">
-                        <img src="../images/icon_add.png" alt="" class="icon-add">
-                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
-                        <button class="media-box_btn btn_blue">已派工</button>
-                    </div>
-                    <div class="cell__hd">
-                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
-                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
-                    </div>
+            <a class="cell cell_access" href="#" style="line-height: 60px;">
+                <div class="cell__bd scroll-box" style="height: 450px;">
+                    <ul>
+                        <li>
+                            <a class="cell cell_access" href="#">
+                                <div class="media-box__hd media-box__hd_img">
+                                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                                    <p style="margin-top: -25px">赵**</p>
+                                </div>
+                                <div class="media-box__bd">
+                                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                                        <button class="media-box_btn btn_blue">已派工</button>
+                                    </div>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="cell cell_access" href="#">
+                                <div class="media-box__hd media-box__hd_img">
+                                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                                    <p style="margin-top: -25px">张**</p>
+                                </div>
+                                <div class="media-box__bd">
+                                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                                        <button class="media-box_btn btn_blue">已派工</button>
+                                    </div>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="cell cell_access" href="#">
+                                <div class="media-box__hd media-box__hd_img">
+                                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                                    <p style="margin-top: -25px">王**0</p>
+                                </div>
+                                <div class="media-box__bd">
+                                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                                        <button class="media-box_btn btn_blue">已派工</button>
+                                    </div>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="cell cell_access" href="#">
+                                <div class="media-box__hd media-box__hd_img">
+                                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                                    <p style="margin-top: -25px">王**1</p>
+                                </div>
+                                <div class="media-box__bd">
+                                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                                        <button class="media-box_btn btn_blue">已派工</button>
+                                    </div>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="cell cell_access" href="#">
+                                <div class="media-box__hd media-box__hd_img">
+                                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                                    <p style="margin-top: -25px">王**2</p>
+                                </div>
+                                <div class="media-box__bd">
+                                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                                        <button class="media-box_btn btn_blue">已派工</button>
+                                    </div>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="cell cell_access" href="#">
+                                <div class="media-box__hd media-box__hd_img">
+                                    <img class="media-box__thumb media-box__thumb_img" src="../images/icon_user1.png" alt="">
+                                    <p style="margin-top: -25px">王**3</p>
+                                </div>
+                                <div class="media-box__bd">
+                                    <h4 class="media-box__title media-box__title_gg">不亮了</h4>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_add.png" alt="" class="icon-add">
+                                        <span class="media-box__desc_add">教学区-第一教学楼-201</span>
+                                        <button class="media-box_btn btn_blue">已派工</button>
+                                    </div>
+                                    <div class="cell__hd">
+                                        <img src="../images/icon_time.png" alt="" class="icon-add" style="width: 16px;">
+                                        <span class="media-box__desc_add">2018-6-21 16:36:01</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </a>
         </div>
