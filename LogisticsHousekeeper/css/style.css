@@ -136,7 +136,7 @@ a.forgot-w3layouts {
     text-transform: capitalize;
     color: #fff;
 }
-.submit1 input[type="submit"] {
+.submit1 input[type="button"] {
     background: #fff;
     color: #000;
     outline: none;
