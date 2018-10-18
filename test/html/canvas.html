@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="wa" width="800" height="400"></canvas>
+
+</body>
+</html>
+<script>
+
+    var hb = wa.getContext('2d');
+    var arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'a', 'b', 'c', 'd', 'e', 'f'];
+
+    var hb=wa.getContext('2d');
+
+    function Random(max, min) {
+        return parseInt(Math.random() * (max - min) + min)
+    }
+    function Run() {
+        //大小
+        var r = Random(40, 20);
+        this.x = Random(wa.width - r, r);
+        this.y = Random(wa.height - r, r);
+        this.z = r;
+        this.c = 'rgba(' + Random(255, 0) + ',' + Random(255, 0) + ',' + Random(255, 0) + ',' + Math.random().toFixed(1) + ')';
+        //速度
+        this.speedx = Random(10, -10);
+        //速度
+        this.speedy = Random(5, -5);
+    }
+
+    Run.prototype.suanzi = function () {
+
+        if (this.speedx == 0) {
+            this.speedx = 6;
+        }
+        if (this.speedy == 0) {
+            this.speedy = -4;
+        }
+
+        if (this.x < this.z || wa.width - this.z < this.x) {
+            this.speedx *= -1;
+        }
+        if (this.y < this.z || wa.height - this.z < this.y) {
+            this.speedy *= -1;
+        }
+        this.x += this.speedx;
+        this.y += this.speedy;
+    };
+
+    Run.prototype.dong = function () {
+
+        hb.beginPath();
+        hb.arc(this.x, this.y, this.z, 0, Math.PI * 2);
+
+        hb.fillStyle = this.c;
+        hb.fill();
+        hb.closePath();
+
+    };
+
+
+    var palys = [];
+    for (var i = 0; i < 200; i++) {
+        var play = new Run();
+        play.dong();
+        palys.push(play);
+    }
+
+    setInterval(function () {
+        hb.clearRect(0, 0, wa.width, wa.height);
+        for (var j = 0; j < palys.length; j++) {
+            palys[j].suanzi();
+            palys[j].dong();
+            console.log(palys[0])
+        }
+    }, 10);
+
+
+</script>

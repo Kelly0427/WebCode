@@ -4,7 +4,7 @@
 
         /* default settings */
         var settings = $.extend({
-            revealbefore : 200, /* this is the amount of "scroll padding" to allow (the more, the later the state will be revealed) */
+            revealbefore : 200, /* this is the amount of "scrollDemo padding" to allow (the more, the later the state will be revealed) */
             anim_class  : 'cntl-animate', /* the anim class, this class should have animation rules in css */
             onreveal    : null /* a callback once the state has been revealed */
         }, options);
