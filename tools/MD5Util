@@ -81,11 +81,11 @@ public class MD5Util {
 	}
 
 	/**
-	 * 生成文件的md5校验值
-	 * @param file
-	 * @return
-	 * @throws IOException
-	 */
+     * 根据MultipartFile文件生成md5校验值
+     * @param file
+     * @return
+     * @throws IOException
+     */
 	public static String getFileMD5Str(MultipartFile file) throws IOException{
 		InputStream inputStream = file.getInputStream();
 		byte[] buffer = new byte[1024];
@@ -97,6 +97,12 @@ public class MD5Util {
 		return bufferToHex(messagedigest.digest());
 	}
 
+    /**
+     * 根据File文件生成md5校验值
+     * @param file
+     * @return
+     * @throws IOException
+     */
 	public static String getFileMD5String(File file) throws IOException{
 		InputStream inputStream = new FileInputStream(file);
 		byte[] buffer = new byte[1024];
