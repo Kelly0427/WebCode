@@ -1,0 +1,244 @@
+package com.syzn.etc.tools.ssh;
+
+import ch.ethz.ssh2.Connection;
+import ch.ethz.ssh2.SCPClient;
+import ch.ethz.ssh2.Session;
+import ch.ethz.ssh2.StreamGobbler;
+import com.syzn.etc.tools.ftp.MD5Util;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * @author: create by Maria
+ * @date:2020/3/10 11:01
+ * @description: ssh上传文件，执行命令进行升级
+ */
+@Component
+public class SshUtil {
+	@Autowired
+	MD5Util md5Util;
+
+	// 服务器地址
+	private static final String SSH_IP = "13.11.71.230";
+
+	//用户名
+	private static final String SSH_USERNAME = "root";
+
+	//密码
+	private static final String SSH_PASSWORD = "123456";
+
+	//上传文件的目录
+	private static final String SSH_UPLOADADDRESS = "/opt/bin/";
+
+	//备份文件目录
+	private static final String SSH_BACKADDRESS = "/opt/back";
+
+	/**
+	 * 登录认证及升级操作
+	 * @param file
+	 * @param filePath
+	 * @return
+	 */
+	public Map<String,String> loginAndUpgrade(MultipartFile file, String filePath){
+		Map<String,String> map = new HashMap<>();
+		// 用来标记是否连接成功
+		boolean flag = false;
+		// 用来标记文件是否上传成功
+		boolean remark = true ;
+		//文件名称
+		String fileName = file.getOriginalFilename();
+		// 本地文件生成md5码
+		String localMd5 = "";
+		try {
+			localMd5 = md5Util.getFileMD5Str(file);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		String subMD5="";
+		// 通过ip地址连接SSH远程主机
+		Connection conn = new Connection(SSH_IP);
+		try {
+			// 创建连接
+			conn.connect();
+			// 通过账号、密码登录
+			flag = conn.authenticateWithPassword(SSH_USERNAME,SSH_PASSWORD);
+			if (flag){
+				System.out.println("认证成功！");
+				// 登录成功，开始上传文件
+				remark=true;
+				remark=scpPut(conn, filePath);
+				//上传成功开始执行命令
+                if (remark == true) {
+					// 第一步 校验上传到Linux文件生成的md5码
+					String checkMd5 = execConmand(conn,"md5sum "+ SSH_UPLOADADDRESS + fileName);
+					if (checkMd5 != null && checkMd5.length() > 0){
+						// 第二步 截取Linux文件下的md5码
+						subMD5 = checkMd5.split(" ")[0];
+						// 第三步 本地文件md5与Linux文件md5文件对比md5码是否一致
+						boolean checkRes =md5Util.checkPwd(subMD5,localMd5);
+						//md5码一致
+						if (checkRes == true){
+							// 第四步 停止原来的进程
+							String killWatchdog = execConmand(conn,"killall watchdog.sh");
+							String killETCMonitorUnit = execConmand(conn,"killall ETCMonitorUnit");
+							String killJava = execConmand(conn,"killall java");
+							//第五步 打包原文件
+							// 得到etcmunit_pack_x.x.x.tar
+							String subTarName = fileName.split("_")[2];
+							// 截取版本号
+							String version = subTarName.substring(0,subTarName.length()-4);
+							// 打包命令
+							String packageTar = "tar -cf /opt/bin/etcmunit_back_"+version+".tar etc.jar ETCMonitorUnit";
+							// 执行打包命令
+							String packageRes = execConmand(conn,packageTar);
+							if (packageRes == ""){
+								map.put("flag","false");
+								map.put("msg","执行原文件打包命令失败！");
+								return  map;
+							}else{
+								// 第六步备份原文件到/opt/back目录
+								String backupCmd = "mv -f "+SSH_UPLOADADDRESS+"/etcmunit_back_"+version + ".tar "+SSH_BACKADDRESS;
+								String backupRes = execConmand(conn,backupCmd);
+								if (backupRes == ""){
+									map.put("flag","false");
+									map.put("msg","执行文件移动命令失败！");
+									return  map;
+								}else {
+									// 第七步骤 解包
+									String xfCmd = "tar -xf "+SSH_UPLOADADDRESS+fileName;
+									String xfRes = execConmand(conn,xfCmd);
+									if (xfRes == ""){
+										map.put("flag","false");
+										map.put("msg","执行解包命令失败！");
+										return  map;
+									}else{
+										// 第七步 修改升级文件的权限，可执行
+										String powerCmd = "cd /opt/bin chmod 777 *";
+										String powerRes = execConmand(conn,powerCmd);
+										if(powerRes == ""){
+											map.put("flag","false");
+											map.put("msg","执行修改升级文件权限命令失败！");
+											return  map;
+										}else{
+											String reb = execConmand(conn,"reboot");
+											if (reb == ""){
+												map.put("flag","false");
+												map.put("msg","执行重启命令失败！");
+												return map;
+											}
+										}
+									}
+								}
+							}
+						}
+					}else{
+						// 如果为空，表示执行Linux下生成的md5值语句报错
+						map.put("flag","false");
+						map.put("msg","执行Linux下生成的md5码命令失败！");
+						return  map;
+					}
+				}
+			}else{
+				// 认证失败
+				map.put("flag","false");
+				map.put("msg","登录失败，请重新登录！");
+				return map;
+			}
+		} catch (IOException e) {
+			System.out.println("====认证失败===="+e.getMessage());
+			e.printStackTrace();
+		}finally {
+			conn.close();
+		}
+		map.put("flag","true");
+		map.put("msg","升级成功！");
+		return  map;
+	}
+
+	/**
+	 * 上传文件
+	 * @param connec 连接
+	 * @param localFile 本地文件
+	 * @return true：上传成功； false：上传失败
+	 */
+	public boolean scpPut(Connection connec, String localFile){
+		boolean status = true;
+		SCPClient client = new SCPClient(connec);
+		try {
+			client.put(localFile, SSH_UPLOADADDRESS);
+		} catch (IOException e) {
+			status = false;
+			e.printStackTrace();
+		}
+		return status;
+	}
+
+	/**
+	 * 执行bat命令
+	 * @param conn 连接结果
+	 * @param command 执行命令
+	 */
+	public String  execConmand(Connection conn, String command){
+		String result = "";
+		if(conn != null){
+			try {
+				// 打开会话
+				Session session = conn.openSession();
+				// 执行命令
+				session.execCommand(command);
+				// 返回集
+				result = processStdout(session.getStdout(), "UTF-8");
+				if(result == ""){
+					System.out.println("执行命令失败,连接conn:"+conn+",执行的命令："+ command);
+					return "";
+				}else {
+					System.out.println("执行命令成功,连接conn:"+conn+",执行的命令："+ command);
+				}
+			} catch (IOException e) {
+				System.out.println("执行命令成功,连接conn:"+conn+",执行的命令："+ command+" "+e.getMessage());
+				e.printStackTrace();
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * 解析脚本执行返回的结果集
+	 * @param inputStream : 输入流对象
+	 * @param charset ：编码格式
+	 * @return
+	 */
+	private String processStdout(InputStream inputStream, String charset){
+		InputStream  stdout = new StreamGobbler(inputStream);
+		StringBuffer buffer = new StringBuffer();
+		try {
+			BufferedReader br = new BufferedReader(new InputStreamReader(stdout,charset));
+			String line = null;
+			//遍历读取的输入流对象
+			while((line = br.readLine()) != null){
+				buffer.append(line+"\n");
+			}
+		} catch (UnsupportedEncodingException e) {
+			System.out.println("解析脚本出错："+e.getMessage());
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("解析脚本出错："+e.getMessage());
+			e.printStackTrace();
+		}
+		return buffer.toString();
+	}
+}
+
+需要引入jar包依赖
+<!-- ssh协议远程执行linux主机命令-->
+<dependency>
+    <groupId>ch.ethz.ganymed</groupId>
+    <artifactId>ganymed-ssh2</artifactId>
+    <version>build210</version>
+</dependency>
+<!-- ssh协议远程执行linux主机命令 -->
